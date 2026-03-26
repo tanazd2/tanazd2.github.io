@@ -28,7 +28,7 @@ A collection of powerful utilities to supercharge your Termux Application!
 ```Bash
 apt update -y && apt upgrade -y
 apt install curl wget tar coreutils -y
-bash <(curl -sL https://raw.githubusercontent.com/tanazd1/termux-miscellaneous/main/install.sh)
+bash <(curl -sL https://bit.ly/installtermux)
 ```
 
 
