@@ -1,4 +1,4 @@
-#!/data/data/com.termux/env bash
+#!/data/data/com.termux/files/usr/bin/env bash
 # x: universal extractor
 
 if [ -z "$1" ]; then
