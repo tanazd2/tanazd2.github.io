@@ -1,30 +1,18 @@
-#!/data/data/com.termux/env bash
+#!/data/data/com.termux/files/usr/bin/bash
 
-echo "[*] Installing termux-miscallious..."
-
-cd "$(dirname "$0")" || exit 1
+echo "[*] Installing termux-miscellaneous..."
 
 BIN_DIR="$PREFIX/bin"
+BASE_URL="https://raw.githubusercontent.com/tanazd1/termux-miscellaneous/main/bin"
 
-command -v install >/dev/null || {
-    echo "[✗] install command not found!"
-    exit 1
-}
-
-for cmd in *; do
-    [ -f "$cmd" ] || continue
-    [[ "$cmd" == .* ]] && continue
-
-    case "$cmd" in
-        install.sh|uninstall.sh|README.md) continue ;;
-    esac
-
-    chmod +x "$cmd"
-
-    if install -Dm755 "$cmd" "$BIN_DIR/$cmd"; then
+for cmd in c cdt ns su tc tct x; do
+    echo "[*] Installing $cmd..."
+    
+    if curl -sL "$BASE_URL/$cmd" -o "$BIN_DIR/$cmd"; then
+        chmod +x "$BIN_DIR/$cmd"
         echo "[✓] Installed $cmd"
     else
-        echo "[✗] Failed to install $cmd"
+        echo "[✗] Failed $cmd"
     fi
 done
 
