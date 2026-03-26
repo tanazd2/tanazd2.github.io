@@ -2,10 +2,16 @@
 
 
 
+
 🚀 Termux Misc Toolkit
 
 A collection of powerful utilities to supercharge your Termux workflow.
 
+![GitHub stars](https://img.shields.io/github/stars/tanazd1/termux-miscellaneous?style=social)
+![GitHub forks](https://img.shields.io/github/forks/tanazd1/termux-miscellaneous?style=social)
+![GitHub issues](https://img.shields.io/github/issues/tanazd1/termux-miscellaneous?style=social)
+![GitHub license](https://img.shields.io/github/license/tanazd1/termux-miscellaneous)
+![Last commit](https://img.shields.io/github/last-commit/tanazd1/termux-miscellaneous)
 ---
 
 ⚡ Features
