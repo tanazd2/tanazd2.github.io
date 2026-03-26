@@ -1,3 +1,7 @@
+![Demo of C shell and x working](demo.png)
+
+
+
 🚀 Termux Misc Toolkit
 
 A collection of powerful utilities to supercharge your Termux workflow.
