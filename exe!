@@ -1,0 +1,21 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+file="$1"
+shift || true
+
+tmp="$PREFIX/tmp/exe_run_$$"
+
+if [ -f "$file" ]; then
+    cp "$file" "$tmp" 2>/dev/null || {
+        echo "Copy failed"
+        exit 1
+    }
+
+    chmod +x "$tmp"
+
+    "$tmp" "$@"
+
+    rm -f "$tmp"
+else
+    echo "File not found"
+fi
