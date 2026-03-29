@@ -12,4 +12,5 @@ cd ~/fakebin
 # download the uname file seprately.
 curl -LO https://raw.githubusercontent.com/tanazd2/termux-utils/main/uname
 chmod +x uname
+echo "export PATH="$PATH:$HOME/fakebin"
 ```
