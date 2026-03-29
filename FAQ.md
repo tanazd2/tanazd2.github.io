@@ -47,3 +47,5 @@ The scripts may run slower than compiled programs because they perform **every s
 git pull origin main
 ```
 This fetches and merges the latest changes from the remote repository.
+
+### 9. PLEASE DO NOT REPLACE THE FAKE ```uname``` WRAPPER AS THE SYSTEM WRAPPER. WE DO NOT HAVE ANY RESPONSIBLITY IF YOUR TERMUX ENV BREAKS BECAUSE OF THIS FAKE ```uname``` SCRIPT.
