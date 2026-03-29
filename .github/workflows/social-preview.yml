@@ -1,4 +1,4 @@
-name: Auto Update Social Preview
+name: name: Auto Update Social Preview
 
 on:
   push:
