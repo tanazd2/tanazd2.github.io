@@ -1,22 +1,3 @@
-#!/data/data/com.termux/env bash
-
-echo "[*] Uninstalling termux-miscallious..."
-
-BIN_DIR="$PREFIX/bin"
-
-for cmd in *; do
-    # skip non-files and repo files
-    [ -f "$cmd" ] || continue
-    case "$cmd" in
-        install.sh|uninstall.sh|README.md) continue ;;
-    esac
-
-    if [ -f "$BIN_DIR/$cmd" ]; then
-        rm -f "$BIN_DIR/$cmd"
-        echo "[✓] Removed $cmd"
-    else
-        echo "[!] Not installed: $cmd"
-    fi
-done
-
-echo "[✓] Done!"
+version https://git-lfs.github.com/spec/v1
+oid sha256:2c2b4836a7ee89bb762c4198cea2e4fd7f42fbb71bc563365a2b3e3a7be8f033
+size 451

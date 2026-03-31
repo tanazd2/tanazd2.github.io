@@ -1,21 +1,3 @@
-#!/data/data/com.termux/files/usr/bin/bash
-
-file="$1"
-shift || true
-
-tmp="$PREFIX/tmp/exe_run_$$"
-
-if [ -f "$file" ]; then
-    cp "$file" "$tmp" 2>/dev/null || {
-        echo "Copy failed"
-        exit 1
-    }
-
-    chmod +x "$tmp"
-
-    "$tmp" "$@"
-
-    rm -f "$tmp"
-else
-    echo "File not found"
-fi
+version https://git-lfs.github.com/spec/v1
+oid sha256:ff4e5b8c197d6fe9bbbdbcf574fd7870c34ac99421d798be10890af738f8df86
+size 300

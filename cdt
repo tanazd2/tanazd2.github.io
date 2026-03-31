@@ -1,24 +1,3 @@
-#!/data/data/com.termux/files/usr/bin/bash
-# Usage: cdt <directory> <command> [args...]
-# cd into directory, run command, then return to original directory
-
-# Exit if no directory given
-if [ -z "$1" ]; then
-    echo "Usage: cdt <directory> <command> [args...]"
-    exit 1
-fi
-
-# Save current directory
-orig_dir="$PWD"
-
-# Change to target directory
-cd "$1" || { echo "cd failed: $1"; exit 1; }
-
-# Shift to remove directory from arguments
-shift
-
-# Execute the remaining command(s)
-"$@"
-
-# Return to original directory
-cd "$orig_dir"
+version https://git-lfs.github.com/spec/v1
+oid sha256:e05e7beedd1b758a162379bd69e8cda5a525ee6eb2528928bfcec2bf18a6d81f
+size 530
