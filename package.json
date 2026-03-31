@@ -1,5 +1,5 @@
 {
-  "name": "termux-utils",
+  "name": "@tanazd2/termux-utils",
   "version": "2.7.0",
   "description": "Useful termux tools",
   "main": "index.js",
@@ -13,7 +13,7 @@
   "keywords": [
     "termux",
     "utils",
-    "scriots"
+    "scripts"
   ],
   "author": "Tanaz",
   "license": "ISC",
