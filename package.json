@@ -1,28 +1,27 @@
 {
-  "name": "@tanazd2/termux-utils",
-  "version": "2.7.0",
-  "description": "Useful termux tools",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "termux-utils",
+  "version": "3.7.1",
+  "description": "termux utilities",
+  "keywords": [
+    "cli",
+    "termux-tool",
+    "termux-tools",
+    "scripts",
+    "linux"
+  ],
+  "homepage": "https://github.com/tanazd2/termux-utils#readme",
+  "bugs": {
+    "url": "https://github.com/tanazd2/termux-utils/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tanazd2/termux-utils.git"
   },
-  "keywords": [
-    "termux",
-    "utils",
-    "scripts"
-  ],
-  "author": "Tanaz",
   "license": "ISC",
+  "author": "tanazd2",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/tanazd2/termux-utils/issues"
-  },
-  "homepage": "https://github.com/tanazd2/termux-utils#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
