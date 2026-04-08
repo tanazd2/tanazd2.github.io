@@ -10,7 +10,7 @@
 ### 2. How do I install termux-utils?  
 You can install all scripts in one go using this command:  
 ```bash
-bash <(curl -sL https://bit.ly/4d7AzZC)
+apt update -y && apt upgrade -y && apt install curl wget tar coreutils bash nodejs git -y && git clone https://github.com/tanazd2/termux-utils.git && cd termux-utils && node index.js i && echo "install success" || echo "install failed"
 ```
 
 ---
