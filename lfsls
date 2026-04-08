@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f78016a403fa3f581cd5d8dad92e8d5e6687284a601cfad3ace890e889730eb
-size 337
+#!/data/data/com.termux/files/usr/bin/bash
+# lfsls: list all LFS-tracked files or check a specific file
+set -e
+
+if [ -z "$1" ]; then
+    git-lfs ls-files
+else
+    file="$1"
+    if git-lfs ls-files | grep -q "[[:space:]]$file\$"; then
+        echo "$file is LFS-tracked ✅"
+    else
+        echo "$file is NOT LFS-tracked ❌"
+    fi
+fi

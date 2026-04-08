@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7c29b1935f46bd16523e6ed77f4620f5a96179b521bcef00b6f314c48b475562
-size 950
+#!/data/data/com.termux/files/usr/bin/bash
+# lfsrm: remove files/directories from LFS tracking
+set -e
+
+if [ "$1" = "-A" ]; then
+    git lfs untrack "**"
+    git rm --cached -r .
+    echo "Removed ALL files from LFS tracking ✅"
+    exit 0
+fi
+
+if [ "$1" = "-rf" ]; then
+    shift
+    target="$1"
+    if [ -d "$target" ]; then
+        git lfs untrack "$target/**"
+        git rm -r --cached "$target"
+        echo "Force removed directory $target from LFS ✅"
+    elif [ -f "$target" ]; then
+        git lfs untrack "$target"
+        git rm --cached "$target"
+        echo "Force removed file $target from LFS ✅"
+    else
+        echo "Target $target not found ❌"
+    fi
+    exit 0
+fi
+
+# remove single file normally
+target="$1"
+if git-lfs ls-files | grep -q "[[:space:]]$target\$"; then
+    git lfs untrack "$target"
+    git rm --cached "$target"
+    echo "Removed $target from LFS tracking ✅"
+else
+    echo "$target not tracked by LFS ❌"
+fi

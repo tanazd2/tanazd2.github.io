@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a66be34e6560d70cf21e185b0d1afc9b8de4f5a8997bff531dd78cf8d5f5120
-size 736
+#!/data/data/com.termux/files/usr/bin/bash
+# lfsdu: total LFS usage or size of a single file
+set -e
+
+LFS_DIR=".git/lfs/objects"
+
+if [ -z "$1" ]; then
+    # total LFS usage
+    find "$LFS_DIR" -type f -exec stat -c%s {} \; | awk '{sum+=$1} END {print "Total bytes: " sum " B\nTotal bits: " sum*8 " bits"}'
+else
+    file="$1"
+    oid=$(git-lfs ls-files -n "$file" | awk '{print $1}')
+    if [ -z "$oid" ]; then
+        echo "$file is not tracked by LFS ❌"
+        exit 1
+    fi
+    obj_file=$(find "$LFS_DIR" -type f -name "$oid")
+    if [ ! -f "$obj_file" ]; then
+        echo "LFS object not found on disk for $file ❌"
+        exit 1
+    fi
+    size=$(stat -c%s "$obj_file")
+    echo "$file size: $size bytes ($((size*8)) bits)"
+fi

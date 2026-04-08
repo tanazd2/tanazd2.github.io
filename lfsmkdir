@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a772f2e3b6d879a92a876f18edaef7d85bddadbe2abd15e7b3915c0ffb76aef5
-size 407
+#!/data/data/com.termux/files/usr/bin/bash
+# lfsmkdir: add a directory and all its contents to LFS
+set -e
+
+dir="$1"
+if [ -z "$dir" ]; then
+    echo "Usage: lfsmkdir <directory>"
+    exit 1
+fi
+
+if [ ! -d "$dir" ]; then
+    echo "Directory '$dir' does not exist ❌"
+    exit 1
+fi
+
+# Track all files recursively
+git lfs track "$dir/**"
+git add "$dir"
+echo "Directory '$dir' and all contents added to LFS ✅"
